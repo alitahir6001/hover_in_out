@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover in/out exercise</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#change').hover(function() { //put the image to be changed inside it's own id to target it easier
+                var metroid = $(this).attr('src'); // original img src attribute
+                $(this).attr('src', $(this).attr('data-alt-src')); // just like with the ninja to cat exercise, we're changing the source attriubte to the data-alt-src.
+
+                $(this).attr('data-alt-src', metroid); // and this changes it back!
+
+            })
+            
+// Admittedly, the ninja to cat assignment immediately popped into my head when i read the instructions for this one. The logic (to me) makes sense: instead of an event listener waiting for a click, just change it to a hover. What I'm doing with those images isnt necessarily changing, how im triggering them is (hover instead of click).  Metroid 4 lyfe!
+
+
+
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+    <div id="ninja"> 
+        <img src="img/start.png" alt="startnes">
+        
+        <img src="img/samus.png" alt="samus">
+        
+        <img id="change" src="img/metroid_larva.png"  data-alt-src='img/xray.png'> <!--this is the line i want to hover and change images in-->
+
+        <img src="img/samus_helmet.png" alt="helmet">
+
+    </div>
+</body>
+</html>
